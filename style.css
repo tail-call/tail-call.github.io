@@ -1,0 +1,43 @@
+:root {
+    --red: #FF2A2A;
+}
+
+html {
+    font-family: 'Play', sans-serif;
+}
+
+.content {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: right;
+    line-height: 1.4em;
+}
+
+h1, h2, h3 {
+    color: var(--red);
+}
+
+a {
+    color: var(--red);
+}
+
+li {
+    list-style: none;
+    box-shadow: var(--red) 1px 0px 0px 0px;
+    margin-right: 1px;
+}
+
+li::after {
+    content: '◀';
+    color: var(--red);
+    font-size: 0.5em;
+    position: relative;
+    bottom: 2px;
+}
+
+
+a:hover {
+    color: white;
+    background-color: var(--red);
+    text-decoration: none;
+}
