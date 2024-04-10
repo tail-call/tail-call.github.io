@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<style>@import url(style.css);</style>
+<h1 data-alt="Резюме">Curriculum Vitae</h1>
+<button onclick="switchLanguage()" data-alt="English 🇺🇸">На русском 🇷🇺</button>
+<p data-alt="под постройкой">under construction</p>
+<!--
+<p style="width: 400px;">
+  <img width="92" style="float: right" src="img/maria.jpeg">
+</p>
+<h2 data-alt="Мария Зайцева">Maria Zaitseva</h2>
+<p data-alt="29 лет, родилась 13 марта 1994">born March, 13 1994</p>
+<p>email: <a href="mailto:maria@tail-call.ru">maria@tail-call.ru</a></p>
+<h3 data-alt="iOS-разработчик">iOS Developer</h3>
+<p>Coding professionally since 2018</p>
+<h3 data-alt="iOS-разработчик">Worked at</h3>
+-->
+<script>
+  function switchLanguage() {
+    for (const element of document.querySelectorAll('[data-alt]')) {
+      const currentText = element.textContent
+      element.textContent = element.getAttribute('data-alt') 
+      element.setAttribute('data-alt', currentText)
+    }
+  }
+</script>
