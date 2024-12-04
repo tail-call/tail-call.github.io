@@ -1,19 +1,71 @@
 <meta charset="utf-8">
 <style>@import url(style.css);</style>
-<h1 data-alt="Резюме">Curriculum Vitae</h1>
-<button onclick="switchLanguage()" data-alt="English 🇺🇸">На русском 🇷🇺</button>
-<p data-alt="под постройкой">under construction</p>
-<!--
-<p style="width: 400px;">
-  <img width="92" style="float: right" src="img/maria.jpeg">
-</p>
-<h2 data-alt="Мария Зайцева">Maria Zaitseva</h2>
-<p data-alt="29 лет, родилась 13 марта 1994">born March, 13 1994</p>
-<p>email: <a href="mailto:maria@tail-call.ru">maria@tail-call.ru</a></p>
-<h3 data-alt="iOS-разработчик">iOS Developer</h3>
-<p>Coding professionally since 2018</p>
-<h3 data-alt="iOS-разработчик">Worked at</h3>
--->
+<title>Curriculum Vitae</title>
+
+<h1 data-alt="Мария Зайцева">Maria Zaitseva</h1>
+
+<!--<button onclick="switchLanguage()" data-alt="English 🇺🇸">На русском 🇷🇺</button>-->
+
+<ul>
+  <!--<li>Тел.: <a href="tel:">+7(9xx)xxx-xx-xx</a></li>-->
+  <li>Email: <a href="mailto:">infernalsaurian@gmail.com</a></li>
+  <li>Github: <a href="https://github.com/tail-call">https://github.com/tail-call</a></li>
+  <li>Telegram: <a href="https://t.me/poisonedpoisson">https://t.me/poisonedpoisson</a></li>
+</ul>
+
+<hr>
+
+<h2 data-alt="Опыт работы">Work experience</h2>
+
+<div class="slide">
+  2022-2025<br>
+  <strong>ООО “Новолетелеком”</strong><br>
+  <em data-alt="Программист">Software Developer</em><br>
+  <p>
+    Поддерживала iOS-версию приложения 
+    “<a href="https://apps.apple.com/us/app/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B3%D0%BE%D1%80%D0%BE%D0%B4/id925651921">Личный кабинет</a>”
+    для новосибирского Интернет-провайдера “<a href="https://2090000.ru/">
+      Электронный город
+    </a>”.<br>
+</div>
+<div class="slide">
+  2018-2022</br>
+  <strong>ООО “СОФТОМЭЙТ”</strong></br>
+  <em data-alt="Программист">Software Developer</em><br>
+  <br>
+  Разрабатывала разнообразные приложения для e-commerce: браузерные расширения, iOS-приложения, в том числе backend-компоненты. Технологии: TypeScript, React, Vue, Angular, Django, Flask, Swift. Была тимлидом команды iOS разработки.</br>
+</div>
+
+<hr>
+
+<h2>Образование</h2>
+
+<div class="slide">
+  2024-...<br>
+  <strong>Национальный исследовательский университет ИТМО</strong><br>
+  <em>Аспирант</em><br>
+  <ul>
+    <li>Направление: машинное обучение и искусственный интеллект<br></li>
+    <li>Факультет информатики инфокоммуникационных технологий<br></li>
+    <li>Исследование: применения композиционной теории игр к нейросетям<br></li>
+  </ul>
+</div>
+
+<div class="slide">
+  2012-2018<br>
+  <strong>Новосибирский Государственный Технический Университет</strong><br>
+  <em>Магистр</em><br>
+  <ul>
+    <li>Направление: наноэлектроника</li>
+    <li>Факультет радиотехники и электроники (РЭФ)</li>
+    <li>Кафедра электроннх приборов (ЭП)<br></li>
+    <li>
+      Исследование: разработка криптографического модуля для интернета вещей
+    </li>
+  </ul>
+  Обучение по направлению “Наноэлектроника” дало мне широкий взгляд на принципы работы, структуру и проектирование вычислительной техники, начиная от физических основ и заканчивая созданием готового устройства.<br>
+</div>
+
 <script>
   function switchLanguage() {
     for (const element of document.querySelectorAll('[data-alt]')) {
@@ -22,4 +74,6 @@
       element.setAttribute('data-alt', currentText)
     }
   }
+
+  document.addEventListener('DOMContentLoaded', switchLanguage);
 </script>
