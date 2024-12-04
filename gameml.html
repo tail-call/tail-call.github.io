@@ -1,0 +1,149 @@
+<meta charset="utf-8">
+<style>@import url(style.css);</style>
+
+<h1>The Entire Machine Learning is Actually an Open Game</h1>
+
+<!-- Anonymous: "My other LaTeX is HTML" -->
+
+<ul>
+  <li><em>A pre-preprint</em></li>
+  <li><em>by Maria Zaitseva &lt;maria@tail-call.ru&gt;</em></li>
+</ul>
+
+<h2>Introduction</h2>
+
+
+<p>
+Machine learning is inherently a game. We train models, score them,
+evaluate, compare, and rank them. For any task, there's a top model
+and a bottom model. New models constantly vie for the top spot,
+pushing others down the leaderboard. It's a world record game
+where endless players compete for the best metrics.
+</p>
+
+<p>
+Training a model and receiving a score is like playing a game from
+start to finish. You perform tasks—predicting, generating text or
+images—and get a score. You may do better or worse.
+</p>
+
+<p>
+In this model, the only player is the data scientist<sup>1</sup>,
+who chooses
+hyperparameters and initiates training. Hyperparameter choice is a
+move, and the score is the outcome. Winning is getting a model that
+solves the problem well.
+</p>
+
+<div class="slide">
+  <sup>1</sup> But I'm not sure if they really are, there could be more. Is
+  a machine learning model a player? One may argue it can't be a player
+  because it's not a rational agent. I think this would be a misuse of the
+  word <em>rational</em>, because rational doesn't equate smart or intelligent
+  or having goals and hopes and dreams. It just implies that a rational agent
+  would generally prefer a strategy that increases their utility.
+</div>
+
+<p>
+Data scientists can automate hyperparameter search, entering a
+<em>higher-order game</em>. This new game includes the original as a subgame,
+with endless decisions to make.
+</p>
+
+<p>
+Creating higher-order games is easy—just contextualize the current
+game within a larger activity. But I'm more interested in breaking
+the game into lower-level games. This is challenging because few
+decisions are made by the network or algorithm. To go lower, we
+need to incorporate decision-making into the learning algorithm,
+ensuring different decisions lead to different outcomes.
+</p>
+
+<p>
+A learning algorithm must include conditional branches. Think of a
+decision tree: it splits data subsets, making decisions to maximize
+score. The way it splits data is its strategy. Another example is
+how training data is fed into a network—batch size, full table, or
+single samples. A rational agent would dynamically adjust batch
+size to finish training sooner while maintaining a decent score.
+This can be a game.
+</p>
+
+<h2>Games Expressed as Games</h2>
+
+<p>
+Playing game theory models can deepen understanding. Have you played
+"Prisoner's Dilemma"? Here's a Python program to play against a
+computer.
+</p>
+
+<p>
+Imagine a game where you optimize training time and score by adjusting
+batch size. Playing this game could give you intuition on how to
+perform the task analytically or train an RL model to do it.
+</p>
+
+<p>
+Making a game to model a game theoretic model could formalize optimal
+behaviors. We could make nuanced opponents, challenging but not
+overwhelming.
+</p>
+
+<h2>Connections with Biology and AI Ethics</h2>
+
+
+<p>
+Human brains are neural networks. We have models of how they work
+but can't implement them. Most ANNs are simpler structures. Yet,
+AI uses metaphors of the human mind—attention, memory, ethics,
+neurons. AI models human experiences to reproduce human-like behavior.
+</p>
+
+<p>
+We can express human cognition in terms of games. Emotions, controlled
+by hormones, influence cognition. We can imagine a function that
+regulates emotions as a player in a game where the goal is to
+maximize a fulfilling and virtuous life.
+</p>
+
+<p>
+We could introduce an emotional core into AI, regulating "emotional"
+processes. This core could be modeled in game-theoretic terms,
+maximizing a fulfilling and virtuous life, used in AI ethics.
+</p>
+
+<h2>Building Neural Games Deep and Wide: Intuition</h2>
+
+<p>
+"Deep learning" refers to how deeply it interacts with data.
+Well-developed models perform better. Their higher score might
+indicate deeper understanding. Metrics are arbitrary, guiding our
+focus on understanding data.
+</p>
+
+<p>
+Optimizing neural network performance requires focusing on how the
+model interacts with data—reading samples, forming attention layers,
+using windows. These are strategies different models employ in the
+game of understanding data.
+</p>
+
+<p>
+Expressing the overall game of learning as a game controlling
+subgames relates to optimal control problems. We could model each
+player individually, giving them autonomy for overall cooperation.
+Both approaches might be equivalent.
+</p>
+
+<h2>Conclusion</h2>
+
+<p>
+When writing, remember to include the current year for future researchers. Data is crucial, feeding into evolving cybernetic systems designed to improve our lives. While general AI may not arrive soon, we'll see more automation.
+</p>
+
+
+<h2>Important Links</h2>
+
+<p>
+[GTAP paper](https://www.ifaamas.org/Proceedings/aamas2024/pdfs/p2243.pdf)
+</p>
