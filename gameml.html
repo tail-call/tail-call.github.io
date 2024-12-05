@@ -1,9 +1,14 @@
 <meta charset="utf-8">
 <style>@import url(style.css);</style>
 
-<h1>The Entire Machine Learning is Actually an Open Game</h1>
-
 <!-- Anonymous: "My other LaTeX is HTML" -->
+
+<h1>
+  Game Theoretic Framework for Neural Network Architecture Design
+</h1>
+<!--<h1> Compositional Game Theoretic Framework for Machine Learning </h1>-->
+<!--<h1> Open Games, the Unit Testing Framework for Machine Learning </h1>-->
+<!--<h1>The Entire Machine Learning is Actually an Open Game</h1>-->
 
 <ul>
   <li><em>A pre-preprint</em></li>
@@ -39,6 +44,23 @@ evaluate, compare, and rank them. For any task, there's a top model
 and a bottom model. New models constantly vie for the top spot,
 pushing others down the leaderboard. It's a world record game
 where endless players compete for the best metrics.
+</p>
+
+<p>
+<em>
+  <strong>Compositionality exists for stubbing.</strong> To study a subgame individually,
+  one would stub it's environment and observe the subgame in isolation.
+  How do we stub an environment? - Simple, just record the real process,
+  abstract it away into a data frame and then you may shape this data
+  as you want and see how different changes issue a different response
+  from your individual unit.
+</em>
+</p>
+
+<p class="slide">
+<em>
+  <strong>CGT is a unit testing framework for ML.</strong>
+</em>
 </p>
 
 <p>
@@ -80,13 +102,31 @@ ensuring different decisions lead to different outcomes.
 </p>
 
 <p>
-A learning algorithm must include conditional branches. Think of a
+For this framework to work, a learning algorithm must include conditional branches. Think of a
 decision tree: it splits data subsets, making decisions to maximize
-score. The way it splits data is its strategy. Another example is
+score. In game-theoretic sense, the way it splits data is its strategy. Another example of strategy is
 how training data is fed into a network—batch size, full table, or
-single samples. A rational agent would dynamically adjust batch
-size to finish training sooner while maintaining a decent score.
-This can be a game.
+single samples. I imagine, a truly rational agent would strive to dynamically adjust batch
+size to finish training sooner while maintaining a decent score. This can be a game.
+</p>
+
+<p>
+The primary contribution of this paper is introduction of the compositional 
+game theory, a framework for applying a game theory in a composable way,
+previously mostly contemplated for economic modeling,
+into the context of neural networks. As we later show, this lens allows us to
+create a toolkit for improving the performance of machine learning models
+by making architectural decisions according to strategy modeling. This is not
+only applicable to neural networks, but also to a wider class of machine
+learning models.
+</p>
+
+<p>
+It will also be demonstrated how one can further expand the
+game of learning to include its environment and build even more complex
+games, forming a unyfing framework for a large subset of artificial
+intelligence studies and practice. We hope that such a unification will offer
+valuable practical insight into building learning systems of the future.
 </p>
 
 <h2>Games Expressed as Games</h2>
@@ -162,8 +202,420 @@ When writing, remember to include the current year for future researchers. Data 
 </p>
 
 
-<h2>Important Links</h2>
+<h2>Literature Review</h2>
+
+<h3>1. Compositional Economic Game Theory</h3>
+
+<p class="slide">
+\cite{cegt-ppt}
+TODO
+Very important for understanding the theory
+
+<h3>2. Compositional Game Theory</h3>
 
 <p>
-[GTAP paper](https://www.ifaamas.org/Proceedings/aamas2024/pdfs/p2243.pdf)
-</p>
+Category theory is a branch of mathematics that studies the properties of mathematical systems in terms of \emph{objects} and \emph{morphisms} (arrows) between them [?].
+
+<p>
+Category = objects + morphisms
+
+<p>
+The fundamental concept in category theory is a category. A category consists of a collection of objects and a collection of morphisms between those objects, along with a way to compose morphisms.
+
+<p>
+Symmetric monoidal is a category equipped with a binary operation called
+the tensor product (or monoidal product) that satisfies certain properties
+(\emph{which?}). Specifically, it is a monoidal category (a category with a
+tensor product and a unit object) that also has a symmetry isomorphism.
+
+
+<p>
+Compositional game theory reduces an arbitrarily complex game to a set of individual decisions.
+
+<p>
+[1]: <strong>Definition 1.</strong> An $n$-player higher order simultaneous move game is defined by the following data:
+<ul>
+  <li> Sets $X_1, ... , X_n$ of \emph{choices} for each player</li>
+  <li> A set $R$ of \emph{outcomes}</li>
+  <li> An \emph{outcome function} $q$: $\prod_{i=1}^{n}{X_i \to R}$</li>
+  <li> For each player $1 <= i <= n$, a \emph{multi-valued selection function} $\delta_i: (X_i \to R) \to \mathcal{P}(X_i)$</li>
+</ul>
+
+
+Terms:
+<ul>
+    <li> Compositional approach</li>
+    <li> Game theory</li>
+    <li> Higher order games</li>
+    <li> Normal form games</li>
+    <li> Extensive form games</li>
+    <li> Category</li>
+    <li> Categorical composition</li>
+    <li> Morphism</li>
+    <li> Morphism composition (how is it different from categorical composition?)</li>
+    <li> Isomorphism</li>
+    <li> Endomorphism</li>
+    <li> Symmetry isomorphism</li>
+    <li> Tensor product / monoidal product</li>
+    <li> Compositionality</li>
+    <li> Nash equilibrium</li>
+    <li> Open systems</li>
+    <li> Boundaries (related to open systems)</li>
+    <li> Categorical open systems</li>
+    <li> Lens</li>
+    <li> Geometry of interactions</li>
+    <li> Selection functions</li>
+    <li> Simultaneous move games</li>
+    <li> Strategy</li>
+    <li> Strategy profile</li>
+</ul>
+
+<h4>Learning representations by back-propagating errors</h4>
+
+<p>
+[2]: Neural networks develop an internal structure that is appropriate for a particular task domain.
+
+<p>
+[2]: Connections within a layer or from higher to lower layers are forbidden.
+
+<p>
+[2]: Connections can skip intermediate layers.
+
+<p>
+[2]: All units within a layer have their states set in parallel.
+
+<p>
+[2]: Different layers have their state set sequentially.
+
+<p>
+[2]: Any input-output function which has a bounded derivative will do.
+
+<p>
+Terms:
+<ul>
+    <li> - Perceptron convergence procedure</li>
+    <li> - Feature analyzers</li>
+    <li> - Representations</li>
+    <li> - Internal representations</li>
+</ul>
+
+<pre>
+\begin{equation}
+    x_j = \sum_i{y_i w_{ji}} \label{eq:nn1}
+\end{equation}
+
+\begin{equation}
+    y_j = {1 \over{1 + e^{-x}}}
+\end{equation}
+
+
+
+
+
+\section{Wikipedia: Morphism}
+
+[3]: Morphism is a generalization of structure-preserving maps such as:
+
+\begin{itemize}
+    <li> homomorpism between algebraic structures</li>
+    <li> functions from a set to another set</li>
+    <li> continous functions between topological spaces</li>
+\end{itemize}
+
+[3]: Morphisms and objects are constituents of a category.
+
+[3]: Like functions, morphisms can be composed.
+
+[3]: \emph{Composition} in morphisms is a \emph{partial binary operation}
+
+[3]: ...the source and the target of a morphism are often called \emph{domain} and \emph{codomain} respectively.
+
+Terms:
+<ul>
+    <li> - Homomorphism</li>
+    <li> - Topological space</li>
+    <li> - Map</li>
+    <li> - Homological algebra</li>
+    <li> - Algebraic topology</li>
+    <li> - Morphism domain</li>
+    <li> - Morphism codomain</li>
+    <li> - Partial binary operation</li>
+    <li> - Commutative diagram</li>
+    <li> - Hom-set</li>
+    <li> - Monomorphism</li>
+    <li> - Epimorphism</li>
+</ul>
+
+
+
+
+
+\section{Thoughts}
+
+Neurons (units) are like players who make choices (produce a value).
+
+An outcome function maps the output of a previous layer to the input of the next layer.
+
+Neurons act as multi-valued selection functions.
+
+\section*{References}
+
+ <ul>
+    <li> [1] N. Ghani, J. Hedges, V. Winschel, P. Zahn,  \textit{Compositional~game theory},~2018. https://doi.org/10.48550/arXiv.1603.04641</li>
+    <li> [2] D. E. Rumelhart, G. E. Hinton, and R. J. Williams, \textit{Learning representations by back-propagating errors}, Nature, 1986, vol. 323, issue 6088, pp. 533-536.</li>
+    <li> [3] https://en.wikipedia.org/wiki/Morphism</li>
+</ul>
+
+\end{document}
+
+
+
+
+
+
+
+
+
+     \documentclass{beamer}
+\usetikzlibrary{shapes.misc}
+
+
+% Theme and color settings
+
+
+
+
+\usetheme{Antibes}
+\usefonttheme{serif}
+\usecolortheme{default}
+
+\setbeamertemplate{footline}[frame number]
+
+
+
+% Colors for syntax highlighting
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Title page information
+\title{Deciphering Properties of Neural Network Using Compositional Game Theory}
+\subtitle{PhD Discussion Forum Presentation}
+
+\author{Maria Zaitseva}
+\institute{ITMO}
+\date{\today}
+
+\logo{\includegraphics[height=1cm]{/Users/scales/Library/Mobile Documents/com~apple~CloudDocs/PhD/Logo/Black text on white background.png}}
+
+% Begin document
+\begin{document}
+
+% Title slide
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Table of contents slide
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+%%%%%%%%%%
+\section{My research}
+%%%%%%%%%%
+
+
+\begin{frame}{My research \#1}
+    \begin{itemize}
+        <li> \textbf{Area:} machine learning and artificial intelligence</li>
+        <li> \textbf{Research topic:} application of compositional~game~theory~(CGT) to neural networks</li>
+        <li> \textbf{Goal:} increase robustness, input noise resistance, and generalizability of artificial neural networks</li>
+    \end{itemize}
+    \note{
+        \begin{itemize}
+            <li> Speaker note for Point 1</li>
+            <li> Speaker note for Point 2</li>
+        \end{itemize}
+    }
+\end{frame}
+
+\begin{frame}{My research \#2}
+    \textbf{Why?}
+    \begin{itemize}
+        <li> Modular analysis of network components</li>
+        <li> Graphical language (string diagrams)</li>
+        <li> Optimization and learning dynamics: network components self-adjusting their strategy?</li>
+        <li> Robustness and adversarial attacks: analyze strategies of the network and the adversary, where the adversary seeks to maximize the network`s error</li>
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%
+\section{TODO Methods}
+%%%%%%%%%%
+
+\begin{frame}{Methods}
+    \frametitle{Methods}
+
+    We define two neural networks: regular network $A$ and augmented network $B$.
+
+     We use CGT to augment error back-propagation algorithm of stochastic gradient descent and observe the effect of applying it to various neural networks on various data; performance metrics (like MSE, $R^{2}$, F1 score, etc.) and loss curves are analyzed to evaluate the effect of augmentation.
+
+XXX basically we took three datasets and trained a pair of two neural networks: one was regular feed-forward network (???), the other had augmented ReLU layer. We observed the loss curve and validation metric vs input noise level plots.
+\end{frame}
+
+%%%%%%%%%%
+\section{TODO Methods}
+%%%%%%%%%%
+
+\begin{frame}{Methods}
+    \frametitle{Methods}
+    
+We train augmented models with various values of $p$:
+
+$$ p \in \{ 0, 0.01, 0.05, 0.5, 0.9, 0.95, 0.99 \} $$
+
+XXX Explain this diagram, also, make two of them: one for augmented, second for regular
+
+\begin{tikzpicture}[
+    neuron/.style={circle, draw, minimum size=1cm},
+    layer/.style={rectangle, draw, minimum width=2cm, minimum height=1cm},
+    connection/.style={-stealth, thick}
+]
+
+% Input Layer
+\foreach \i in {1,...,3}
+    \node[neuron] (input-\i) at (0,-\i) {};
+
+% Hidden Layer
+\foreach \i in {1,...,4}
+    \node[neuron] (hidden-\i) at (3,-\i+0.5) {};
+
+% Output Layer
+\foreach \i in {1,...,2}
+    \node[neuron] (output-\i) at (6,-\i-0.5) {};
+
+% Connections
+\foreach \i in {1,...,3}
+    \foreach \j in {1,...,4}
+        \draw[connection] (input-\i) -- (hidden-\j);
+
+\foreach \i in {1,...,4}
+    \foreach \j in {1,...,2}
+        \draw[connection] (hidden-\i) -- (output-\j);
+
+% Labels
+\node[above] at (0,0) {Input Layer};
+\node[above] at (3,0) {Hidden Layer};
+\node[above] at (6,0) {Output Layer};
+
+\end{tikzpicture}
+
+XXX A diagram of a bernoulli mask
+
+\end{frame}
+\begin{frame}{Training data}
+    \frametitle{Training data}
+
+    dataset 1 [1]
+
+    dataset 2 [2]
+
+    dataset 3 [3]
+
+\end{frame}
+
+
+%%%%%%%%%%
+\section{TODO Results}
+%%%%%%%%%%
+
+\begin{frame}
+    \frametitle{Results}
+    \begin{itemize}
+        <li> \textit{morphism} -- structure-preserving map between two mathematical structures of the same type.</li>
+        <li> \textit{coutility} -- a concept in economics and game theory that refers to the utility or benefit that one agent derives from the utility or benefit that another agent receives.</li>
+        <li> \textit{symmetric monoidal category} -- a category equipped with a symmetric monoidal structure, which is a way of combining objects in a manner analogous to tensor products in vector spaces.</li>
+    \end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%
+\section{TODO Conclusion}
+%%%%%%%%%%
+
+\begin{frame}{Conclusion}
+    \frametitle{"Learning representations by back-propagating errors"}
+
+    \textbf{Authors}
+    \begin{itemize}
+        <li> David E. Rumelhart</li>
+        <li> Geoffrey E. Hinton (aka \textit{Godfather of AI})</li>
+        <li> Ronald J. Williams</li>
+    \end{itemize}
+
+    \textbf{Published in}
+    \begin{itemize}
+        <li> \textbf{Journal:} Nature</li>
+        <li> \textbf{Volume:} 323</li>
+        <li> \textbf{Issue:} 6088</li>
+        <li> \textbf{Pages:} 533-536</li>
+        <li> \textbf{Year:} 1986</li>
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%
+\section{TODO Future Implementation}
+%%%%%%%%%%
+
+\begin{frame}
+    \frametitle{Future Implementation}
+    \begin{itemize}
+        <li> Grid search hyperparameter space to explore variation of the effect</li>
+        <li> \textit{aa} -- XXX Generate more future implementations</li>
+        <li> \textit{aa} -- aa</li>
+        <li> \textit{aa} -- aa</li>
+        <li> \textit{aa} -- aa</li>
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%
+\section*{Final slide}
+%%%%%%%%%%
+
+\begin{frame}{}
+    \centerline{\textit{Thank you for your attention!}}
+\end{frame}
+
+
+%%%%%%%%%%
+\section{References}
+%%%%%%%%%%
+
+\begin{frame}{References}
+    <ul>
+    <li> [1] dataspelunking, \emph{Initial commit of code for Machine~Learning with R (2nd Edition).}: \url{https://github.com/dataspelunking/MLwR/blob/master/Machine\%20Learning\%20with\%20R\%20(2nd\%20Ed.)/Chapter\%2003/wisc_bc_data.csv}</li>
+    <li> [2] mragpavank, \emph{car-evaluation-dataset/car_evaluation.csv}: \url{https://github.com/mragpavank/car-evaluation-dataset/blob/master/car_evaluation.csv}</li>
+    </ul>
+    \note{
+        \begin{itemize}
+            <li> Speaker note for Conclusion Point 1</li>
+            <li> Speaker note for Conclusion Point 2</li>
+        \end{itemize}
+     }
+\end{frame}
+
+% End document
+\end{document}
+
+</pre>
+
+<h2>References</h2>
+
+<ol>
+  <li>
+  <li>
+  <li>[GTAP paper](https://www.ifaamas.org/Proceedings/aamas2024/pdfs/p2243.pdf)
+</ol>
+
