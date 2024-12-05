@@ -1,4 +1,16 @@
-<meta charset="utf-8">
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+
+  <!-- Put defer to speed up loading -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+
+  <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
 <style>@import url(style.css);</style>
 
 <!-- Anonymous: "My other LaTeX is HTML" -->
@@ -237,7 +249,7 @@ Compositional game theory reduces an arbitrarily complex game to a set of indivi
 <ul>
   <li> Sets $X_1, ... , X_n$ of \emph{choices} for each player</li>
   <li> A set $R$ of \emph{outcomes}</li>
-  <li> An \emph{outcome function} $q$: $\prod_{i=1}^{n}{X_i \to R}$</li>
+  <li> An \emph{outcome function} $q$: <span class="katex">\prod_{i=1}^{n}{X_i \to R}</span></li>
   <li> For each player $1 <= i <= n$, a \emph{multi-valued selection function} $\delta_i: (X_i \to R) \to \mathcal{P}(X_i)$</li>
 </ul>
 
@@ -251,7 +263,7 @@ Terms:
     <li> Extensive form games</li>
     <li> Category</li>
     <li> Categorical composition</li>
-    <li> Morphism</li>
+    <li> <em>Morphism</em> -- structure-preserving map between two mathematical structures of the same type.</li>
     <li> Morphism composition (how is it different from categorical composition?)</li>
     <li> Isomorphism</li>
     <li> Endomorphism</li>
@@ -270,7 +282,29 @@ Terms:
     <li> Strategy profile</li>
 </ul>
 
-<h4>Learning representations by back-propagating errors</h4>
+<ul>
+  <li> <em>coutility</em> -- a concept in economics and game theory that refers to the utility or benefit that one agent derives from the utility or benefit that another agent receives.</li>
+  <li> <em>symmetric monoidal category</em> -- a category equipped with a symmetric monoidal structure, which is a way of combining objects in a manner analogous to tensor products in vector spaces.</li>
+</ul>
+
+
+<h3>3. Learning representations by back-propagating errors</h3>
+
+<strong>Authors</strong>
+<ul>
+    <li> David E. Rumelhart</li>
+    <li> Geoffrey E. Hinton (aka <em>Godfather of AI</em>)</li>
+    <li> Ronald J. Williams</li>
+</ul>
+
+<strong>Published in</strong>
+<ul>
+    <li> <strong>Journal:</strong> Nature</li>
+    <li> <strong>Volume:</strong> 323</li>
+    <li> <strong>Issue:</strong> 6088</li>
+    <li> <strong>Pages:</strong> 533-536</li>
+    <li> <strong>Year:</strong> 1986</li>
+</ul>
 
 <p>
 [2]: Neural networks develop an internal structure that is appropriate for a particular task domain.
@@ -299,28 +333,28 @@ Terms:
     <li> - Internal representations</li>
 </ul>
 
-<pre>
-\begin{equation}
-    x_j = \sum_i{y_i w_{ji}} \label{eq:nn1}
-\end{equation}
+<div class="katex">
+  x_j = \sum_i{y_i w_{ji}} <!--\label{eq:nn1}-->
+</div>
 
-\begin{equation}
-    y_j = {1 \over{1 + e^{-x}}}
-\end{equation}
-
+<div class="katex">
+  y_j = {1 \over{1 + e^{-x}}}
+</div>
 
 
 
 
-\section{Wikipedia: Morphism}
+
+
+<h3>4. Wikipedia: Morphism</h3>
 
 [3]: Morphism is a generalization of structure-preserving maps such as:
 
-\begin{itemize}
+<ul>
     <li> homomorpism between algebraic structures</li>
     <li> functions from a set to another set</li>
     <li> continous functions between topological spaces</li>
-\end{itemize}
+</ul>
 
 [3]: Morphisms and objects are constituents of a category.
 
@@ -332,25 +366,25 @@ Terms:
 
 Terms:
 <ul>
-    <li> - Homomorphism</li>
-    <li> - Topological space</li>
-    <li> - Map</li>
-    <li> - Homological algebra</li>
-    <li> - Algebraic topology</li>
-    <li> - Morphism domain</li>
-    <li> - Morphism codomain</li>
-    <li> - Partial binary operation</li>
-    <li> - Commutative diagram</li>
-    <li> - Hom-set</li>
-    <li> - Monomorphism</li>
-    <li> - Epimorphism</li>
+    <li> Homomorphism</li>
+    <li> Topological space</li>
+    <li> Map</li>
+    <li> Homological algebra</li>
+    <li> Algebraic topology</li>
+    <li> Morphism domain</li>
+    <li> Morphism codomain</li>
+    <li> Partial binary operation</li>
+    <li> Commutative diagram</li>
+    <li> Hom-set</li>
+    <li> Monomorphism</li>
+    <li> Epimorphism</li>
 </ul>
 
 
 
 
 
-\section{Thoughts}
+<h2>Thoughts</h4>
 
 Neurons (units) are like players who make choices (produce a value).
 
@@ -358,101 +392,29 @@ An outcome function maps the output of a previous layer to the input of the next
 
 Neurons act as multi-valued selection functions.
 
-\section*{References}
 
- <ul>
-    <li> [1] N. Ghani, J. Hedges, V. Winschel, P. Zahn,  \textit{Compositional~game theory},~2018. https://doi.org/10.48550/arXiv.1603.04641</li>
-    <li> [2] D. E. Rumelhart, G. E. Hinton, and R. J. Williams, \textit{Learning representations by back-propagating errors}, Nature, 1986, vol. 323, issue 6088, pp. 533-536.</li>
-    <li> [3] https://en.wikipedia.org/wiki/Morphism</li>
+<h2>Deciphering Properties of Neural Network Using Compositional Game Theory: a PhD Discussion Forum Presentation</h2>
+
+<h3>1. My research</h3>
+
+
+<ul>
+  <li> <strong>Area:</strong> machine learning and artificial intelligence</li>
+  <li> <strong>Research topic:</strong> application of compositional~game~theory~(CGT) to neural networks</li>
+  <li> <strong>Goal:</strong> increase robustness, input noise resistance, and generalizability of artificial neural networks</li>
 </ul>
 
-\end{document}
-
-
-
-
-
-
-
-
-
-     \documentclass{beamer}
-\usetikzlibrary{shapes.misc}
-
-
-% Theme and color settings
-
-
-
-
-\usetheme{Antibes}
-\usefonttheme{serif}
-\usecolortheme{default}
-
-\setbeamertemplate{footline}[frame number]
-
-
-
-% Colors for syntax highlighting
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-
-% Title page information
-\title{Deciphering Properties of Neural Network Using Compositional Game Theory}
-\subtitle{PhD Discussion Forum Presentation}
-
-\author{Maria Zaitseva}
-\institute{ITMO}
-\date{\today}
-
-\logo{\includegraphics[height=1cm]{/Users/scales/Library/Mobile Documents/com~apple~CloudDocs/PhD/Logo/Black text on white background.png}}
-
-% Begin document
-\begin{document}
-
-% Title slide
-\begin{frame}
-    \titlepage
-\end{frame}
-
-% Table of contents slide
-\begin{frame}{Outline}
-    \tableofcontents
-\end{frame}
-
-%%%%%%%%%%
-\section{My research}
-%%%%%%%%%%
-
-
-\begin{frame}{My research \#1}
-    \begin{itemize}
-        <li> \textbf{Area:} machine learning and artificial intelligence</li>
-        <li> \textbf{Research topic:} application of compositional~game~theory~(CGT) to neural networks</li>
-        <li> \textbf{Goal:} increase robustness, input noise resistance, and generalizability of artificial neural networks</li>
-    \end{itemize}
-    \note{
-        \begin{itemize}
-            <li> Speaker note for Point 1</li>
-            <li> Speaker note for Point 2</li>
-        \end{itemize}
-    }
-\end{frame}
-
-\begin{frame}{My research \#2}
-    \textbf{Why?}
-    \begin{itemize}
+<h4>1.2. Why?</h4>
+    <ul>
         <li> Modular analysis of network components</li>
         <li> Graphical language (string diagrams)</li>
         <li> Optimization and learning dynamics: network components self-adjusting their strategy?</li>
         <li> Robustness and adversarial attacks: analyze strategies of the network and the adversary, where the adversary seeks to maximize the network`s error</li>
-    \end{itemize}
+    </ul>
 \end{frame}
+    </ul>
 
-%%%%%%%%%%
-\section{TODO Methods}
+<h3>TODO Methods</h3>
 %%%%%%%%%%
 
 \begin{frame}{Methods}
@@ -466,7 +428,7 @@ XXX basically we took three datasets and trained a pair of two neural networks: 
 \end{frame}
 
 %%%%%%%%%%
-\section{TODO Methods}
+<h3>TODO Methods</h3>
 %%%%%%%%%%
 
 \begin{frame}{Methods}
@@ -527,95 +489,34 @@ XXX A diagram of a bernoulli mask
 \end{frame}
 
 
-%%%%%%%%%%
-\section{TODO Results}
-%%%%%%%%%%
 
-\begin{frame}
-    \frametitle{Results}
-    \begin{itemize}
-        <li> \textit{morphism} -- structure-preserving map between two mathematical structures of the same type.</li>
-        <li> \textit{coutility} -- a concept in economics and game theory that refers to the utility or benefit that one agent derives from the utility or benefit that another agent receives.</li>
-        <li> \textit{symmetric monoidal category} -- a category equipped with a symmetric monoidal structure, which is a way of combining objects in a manner analogous to tensor products in vector spaces.</li>
-    \end{itemize}
-\end{frame}
+<h3>TODO Conclusion</h3>
 
+<h3>n. TODO Future Implementation</h3>
 
-%%%%%%%%%%
-\section{TODO Conclusion}
-%%%%%%%%%%
-
-\begin{frame}{Conclusion}
-    \frametitle{"Learning representations by back-propagating errors"}
-
-    \textbf{Authors}
-    \begin{itemize}
-        <li> David E. Rumelhart</li>
-        <li> Geoffrey E. Hinton (aka \textit{Godfather of AI})</li>
-        <li> Ronald J. Williams</li>
-    \end{itemize}
-
-    \textbf{Published in}
-    \begin{itemize}
-        <li> \textbf{Journal:} Nature</li>
-        <li> \textbf{Volume:} 323</li>
-        <li> \textbf{Issue:} 6088</li>
-        <li> \textbf{Pages:} 533-536</li>
-        <li> \textbf{Year:} 1986</li>
-    \end{itemize}
-\end{frame}
-
-%%%%%%%%%%
-\section{TODO Future Implementation}
-%%%%%%%%%%
-
-\begin{frame}
-    \frametitle{Future Implementation}
-    \begin{itemize}
-        <li> Grid search hyperparameter space to explore variation of the effect</li>
-        <li> \textit{aa} -- XXX Generate more future implementations</li>
-        <li> \textit{aa} -- aa</li>
-        <li> \textit{aa} -- aa</li>
-        <li> \textit{aa} -- aa</li>
-    \end{itemize}
-\end{frame}
-
-%%%%%%%%%%
-\section*{Final slide}
-%%%%%%%%%%
-
-\begin{frame}{}
-    \centerline{\textit{Thank you for your attention!}}
-\end{frame}
-
-
-%%%%%%%%%%
-\section{References}
-%%%%%%%%%%
-
-\begin{frame}{References}
     <ul>
-    <li> [1] dataspelunking, \emph{Initial commit of code for Machine~Learning with R (2nd Edition).}: \url{https://github.com/dataspelunking/MLwR/blob/master/Machine\%20Learning\%20with\%20R\%20(2nd\%20Ed.)/Chapter\%2003/wisc_bc_data.csv}</li>
-    <li> [2] mragpavank, \emph{car-evaluation-dataset/car_evaluation.csv}: \url{https://github.com/mragpavank/car-evaluation-dataset/blob/master/car_evaluation.csv}</li>
+        <li> Grid search hyperparameter space to explore variation of the effect</li>
+        <li> <em>aa</em> -- XXX Generate more future implementations</li>
+        <li> <em>aa</em> -- aa</li>
+        <li> <em>aa</em> -- aa</li>
+        <li> <em>aa</em> -- aa</li>
     </ul>
-    \note{
-        \begin{itemize}
-            <li> Speaker note for Conclusion Point 1</li>
-            <li> Speaker note for Conclusion Point 2</li>
-        \end{itemize}
-     }
-\end{frame}
-
-% End document
-\end{document}
-
-</pre>
 
 <h2>References</h2>
 
-<ol>
-  <li>
-  <li>
-  <li>[GTAP paper](https://www.ifaamas.org/Proceedings/aamas2024/pdfs/p2243.pdf)
+<ol style="font-size: 90%">
+  <li> N. Ghani, J. Hedges, V. Winschel, P. Zahn, <em>Compositional game theory</em>, 2018. https://doi.org/10.48550/arXiv.1603.04641</li>
+  <li> D. E. Rumelhart, G. E. Hinton, and R. J. Williams, <em>Learning representations by back-propagating errors</em>, Nature, 1986, vol. 323, issue 6088, pp. 533-536.</li>
+    <li> https://en.wikipedia.org/wiki/Morphism</li>
+    <li>[GTAP paper](https://www.ifaamas.org/Proceedings/aamas2024/pdfs/p2243.pdf)
+    <li> [1] dataspelunking, \emph{Initial commit of code for Machine~Learning with R (2nd Edition).}: \url{https://github.com/dataspelunking/MLwR/blob/master/Machine\%20Learning\%20with\%20R\%20(2nd\%20Ed.)/Chapter\%2003/wisc_bc_data.csv}</li>
+    <li> [2] mragpavank, \emph{car-evaluation-dataset/car_evaluation.csv}: \url{https://github.com/mragpavank/car-evaluation-dataset/blob/master/car_evaluation.csv}</li>
 </ol>
+
+
+<script>
+  for (const element of document.querySelectorAll('.katex')) {
+    katex.render(element.textContent, element);
+  }
+</script>
 
