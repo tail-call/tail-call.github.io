@@ -1,0 +1,134 @@
+<meta charset="utf-8">
+<title>Lua</title>
+<style>@import url(style.css);</style>
+
+<h1>Lua, the Programming Language</h1>
+
+<style>
+.moon {
+  font-size: 400%;
+  transform: rotate(10deg) translate(50px, 50px);
+}
+
+lua-word {
+  font-weight: bold;
+  font-family: monospace;
+}
+
+</style>
+
+<div class="moon">&#x263d;</div>
+
+<p>
+Have you noticed the moon is a bit like a parenthesis?
+
+<p>
+Things of amazing beauty were invented by humans: first it was Lisp, then it
+was Forth, and then it was Lua - if there were other good languages, please
+let me know
+
+<p align="center">
+<table>
+  <thead>
+    <tr>
+      <th>Language</th>
+      <th>Year of Release</th>
+      <th>Keywords</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lisp</td>
+      <td>1960</td>
+      <td>defun, cons, car, cdr, lambda, eval, cond</td>
+    </tr>
+    <tr>
+      <td>Forth</td>
+      <td>1970</td>
+      <td>:, dup, drop, pick, roll</td>
+    </tr>
+    <tr>
+      <td>Smalltalk</td>
+      <td>1972</td>
+      <td>new, yourself, super</td>
+    </tr>
+    <tr>
+      <td>Scheme</td>
+      <td>1975</td>
+      <td>define, call/cc, set!, define-syntax</td>
+    </tr>
+    <tr>
+      <td>Common Lisp</td>
+      <td>1984</td>
+      <td>defun, defmacro, defparameter, defclass, defpackage, loop</td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>1991</td>
+      <td>def, class, nonlocal, async, yield, import</td>
+    </tr>
+    <tr style="background: pink">
+      <td>Lua</td>
+      <td>1993</td>
+      <td>function, local</td>
+    </tr>
+  </tbody>
+</table>
+<em>Table 1. Various languages.</em>
+
+<p>
+The good thing about being a 1993 language is that you can be influenced by every other language that was released before that date. In Lua, I personally sense a great influence of every language mentioned in <em>Table 1</em>, and I like these influences
+
+<p>
+conf: __index, __add, __le, __mode -- __init__, __str__, __add__
+
+<p>
+conf: _G -- globals()
+
+<p>
+They say there's a man in the moon - if you look closely enough into moon's
+surface, you will see a face. In case of Lua, the face you see in the moon
+is of <strong><a href="https://en.wikipedia.org/wiki/Roberto_Ierusalimschy">Roberto Ierusalimski</a></strong> [Wikipedia]. When I say this, I always want to add "it's the
+same guy who made D" but D was made by <a href="https://en.wikipedia.org/wiki/Andrei_Alexandrescu">Andrei Aleksandresku</a> [Wikipedia], an entirely
+different person<sup><a href="#note1">1</a></sup>
+
+<p class="slide" id="note1">
+<sup>1</sup> No wonder I keep getting them confused, their last names both end with /sk[ui]$/
+
+<p>
+One thing that comes to mind first when thinking about Lua is that it begins
+indexing its arrays (aka tables) with 1 as opposed to 0, the starting index
+of choice of 99% other programming languages. Both are nice choices, one is
+more intuitive when thinking about high-level problems, the other is more
+intuitive when dealing with things like memory or anything with an "offset".
+A truly bad choice would be using -1 or 2 as base index
+
+<p>
+The reason behind this is that Lua was indeed designed to be used by
+non-programmers, who needed a very simple language to automate their daily
+computations. It's a small niche, and we don't usually target it anymore when
+developing software. We kind of collectively assume that programming is the
+job of a programmer, and now that we have a lot of programmers, why would
+<em>you</em> code instead of them?
+
+<p>
+Another instance of this is that every assignment to a free variable introduces
+a global binding, visible across all modules. If you're a novice programmer,
+this is a win for you because you don't have to wonder why your variable
+suddenly became <lua-word>nil</lua-word>, and if you're an experienced
+developer, you probably care about lexical scoping and should by default make
+every variable you use with <lua-word>local</lua-word>. You also need to be
+careful not to assign to undeclared variables, but your <abbr title="Integrated Development Environment">IDE</abbr>
+
+<p>
+Metatables are the continuation of theme "we're giving you one multi-purpose
+tool instead of many single-purpose utilities" that table has begun. Metatables
+are your meta-programming tool, and with meta-programming you may achieve object
+oriented programming (OOP) and other good stuff. Lua doesn't have macros, but
+metatables make it possible to introduce custom syntax to a degree. Personally
+I recommend against going for the urge of rolling out Your Own Object System
+because it's not a natural style for Lua: whatever you need an object system
+for (inheritance, overriding behavior, polymorphism), there are other, more
+straightforward ways to implement these. Lua isn't very like Smalltalk, it's
+almost trying to be the opposite of Smalltalk while pursuing similar goals in
+its design

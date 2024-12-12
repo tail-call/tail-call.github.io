@@ -14,6 +14,8 @@
 
 <ul>
   <li>
+    <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D0%BC%D0%B5%D1%80%D0%B0_%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%BE%D0%B2_%D1%8D%D0%BA%D1%81%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%81%D0%BB%D1%83%D0%B6%D0%B1">Номера телефонов экстренных служб</a> | Wikipedia
+  <li>
     <a href="https://parentheticallyspeaking.org/articles/write-a-book/">You can too write a book</a> | Parenthetically Speaking
   <li>
     <a href="https://www.swyx.io/learn-in-public">Learn in public</a> | swyx.io "The fastest way to learn"
@@ -26,14 +28,14 @@
 <h2>\about{me}</h2>
 
 <p>
-My name is Maria. I'm a software developer and AI researcher. I'm an avid
+My name is Maria. I'm a software developer and <abbr title="Artificial Intelligence">AI</abbr> researcher. I'm an avid
 note taker and a digital gardening enthusiast.
 </p>
 
 <p>
 And this is my digital garden! I happen to own a lot of them.
 Recently <!-- 2024-12-04 --> I had an epiphany that I should try to keep some
-amount of my notes in HTML format, for it shall swiftly outlive every other
+amount of my notes in <abbr title="Hyper-Text Markup Language">HTML</abbr> format, for it shall swiftly outlive every other
 technology I use now.
 </p>
 
@@ -47,12 +49,12 @@ The only thing of note I can share with you right now is this:
 </p>
 
 <p class="slide">
-But who will leave reality of cesspit for their dreams?<br>
+<abbr title="Shall that be you?">But who will leave reality of cesspit for their dreams?</abbr><br>
 </p> 
 
 <code>
-Two letter commands were common in UNIX because they were easy to type,
-and single letter commands were reserved for the user to define.
+  Two letter commands were common in <abbr title="Uncle Never Installed X11">UNIX</abbr>
+  because they were easy to type, and single letter commands were reserved for the user to define.
 <!--Not a quote, it's a slightly redacted note of mine-->
 </code>
 
@@ -74,12 +76,16 @@ Why is Neovim a <em>superior editor?</em>
 
 <ul>
   <li> Scriptable in Lua (not Elisp or Vimscript!)
-  <li> Lua is the best language
+  <li> <a href="lua.html">Lua is the best language</a>
   <li> I memorized Vim key bindings so well I can't use any other edytore animor
   <li> So many edits you want to make are a series of <code>%s</code>-s
   <li> Macros
   <li> I also love <a href="https://vifm.info">vifm</a> a lot, which is a
-    two-pane directory editor with convenient (aka vi-like) key bindings, and
+    two-pane <select>
+      <option>directory editor</option>
+      <option>file manager</option>
+      <option>Midnight Commander clone</option>
+    </select> with convenient (aka vi-like) key bindings, and
     so my vifm and nvim shell out into one another a lot
 </ul>
 
@@ -260,3 +266,11 @@ tr, th, td {
 </tbody>
 </table>
 <div align=right><em>Table 1. My academic plan.</em></div>
+
+<h2>How to reference a URL?</h2>
+
+<p>
+Unlike books, which may be torn, lost, given to another person without you ever remembering about it, URLs die in a different way: they stop opening. Or entirely different content is being put instead of what the URL once contained.
+
+<p>
+Despite that, we still want to reference URLs like we reference our books, in a nice list at the end of the text. This almost works well with books because many instances of a book are typically printed. For a URL, it is common to be served by a VM on a cheap VPS server.

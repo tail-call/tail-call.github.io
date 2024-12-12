@@ -1,18 +1,19 @@
 :root {
   --foreground: #413a7f;
+  --background: rgb(239 236 255);
 }
+
 
 html {
-  font-family: KaTeX_Main, Lucida Grande, Helvetica Neue, Helvetica, Arial, sans-serif;
-  background-color: rgb(239 236 255);
-}
+  font-family:
+    KaTeX_Main,
+    Lucida Grande,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
 
-a {
-  color: #d7569c;
-}
-
-a:visited {
-  color: #413a7f;
+  background-color: var(--background);
 }
 
 body {
@@ -27,14 +28,6 @@ body {
   max-width: 700px;
 }
 
-.slide {
-  margin-left: 1rem;
-  margin-bottom: 2rem;
-  border-left: solid 1px var(--foreground);
-  padding-left: 1rem;
-  max-width: 650px;
-}
-
 @media (min-width: 700px) {
   body {
     margin-top: 1rem;
@@ -42,3 +35,30 @@ body {
     margin-right: 3rem;
   }
 }
+
+a {
+  color: #d7569c;
+}
+
+a:visited {
+  color: #413a7f;
+}
+
+sup {
+  font-size: 50%;
+}
+
+p:target {
+  background: var(--background);
+}
+
+.slide {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+  border-left: solid 1px var(--foreground);
+  padding-left: 1rem;
+  max-width: 650px;
+}
+
