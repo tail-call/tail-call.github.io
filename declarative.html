@@ -1,0 +1,84 @@
+<meta charset="utf-8">
+<style>@import url(style.css);</style>
+
+<def-macro "Si">
+  <em>S<sub>i</sub></em>
+</def-macro>
+
+<p>
+There's no such thing as declarativity vs. imperativity because declarativity
+is imperativity with special rules
+
+<p>
+Imperative program is a collection of declarative statements <em>S<sub>i</sub></em>,
+each describing a
+single transform of the computation's state: <em>S<sub>i</sub></em>: <em>C</em> &#8614; <em>C</em>. Imperative computation keeps track
+of current statement reference <em>*S</em>. Imperativity explicitly models the design of
+a <em>computer</em> - device able to carry out a computation
+
+<p>
+Declarative languages can be expressed in imperative languages as computational
+statements, and imperative languages can be expressed in declarative languages
+as compositions of declarations
+
+<p>
+Is this connected to <abbr title="Church-Turing Thesis">CTT</abbr>? Yes!
+
+<p>
+The entire field of programming is about writing <em>programs.</em> Programs
+map inputs to outputs by performing a <em>computation</em>. Generally speaking,
+input is the state of the world before the computation began, and output is
+state of the world after the computation. Since this definition is too broad
+to be practical, we usually abstract the world away and limit the scope of
+input-output transformation to data-to-data transformation, which allows us
+to describe the majority of computations that we do in programming
+
+<p class="slide">
+Computation does not necessarily deal with data. For example, for Arduino to
+blink a LED it needs to perform a computation: rather than employing some
+physical oscillating process, it counts time using literal timers/counter
+and alternates voltage on output pins using the programmatic statements.
+This is a computation
+
+<p>
+Logically, there should be no limit to what is considered data, because data
+is stored in various forms like text, images, numbers, voice, etc., but the
+International Gold Standard for representing data is something programmers
+call <em>blobs</em>: arrays of bytes (8-bit quantities able to represent whole
+numbers 0 through 255). Remember, reader, that standardization of blobs is a historical
+accident
+
+<p>
+<em>n</em>-D arrays are 1-D arrays (aka regular arrays) with <em>shape</em>. Shape specifies the
+indexing strategy an can be thought of as 1-to-1 mapping between "external"
+indices - <em>n</em>-D vectors - and scalar "internal" linear indices. This is
+very much related to Peano Curve and related problems, because we're mapping
+a line to a surface/volume/hyper-volume
+
+<p>
+Another related topic is pointers. Pointers are named indices, or "addresses",
+of specific values. By using pointers, various parts of data may reference
+one another and create traversable graph-like structure
+
+<p>
+Since graphs and trees may be represented in linear memory as pointers,
+they're also linearizable, like <em>n</em>-D arrays
+
+<p>
+It's well known that computations can also be expressed in linear memory. It's
+traceable through how we represent source code and machine code: both are
+stored in and executed from linear memory
+
+<p>
+Connection between closures and referential transparency: both are promises
+made to a programmer that "what you see is what you get". They're not a
+natural occurence, but a tool to achieve consistency of program's behavior
+regarding to how it accesses variables: it feels like a program is looking
+at its own source to figure out which outer variables a given lambda should
+access
+
+<p>
+Libraries feel very different from languages because they're built on top of
+them, but libraries are languages actually. Some lack composition methods
+because they rely on the host language to provide them. Others do provide
+composition methods in form of custom syntax, operators, inheritance, etc.

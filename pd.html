@@ -1,0 +1,80 @@
+<meta charset="utf-8">
+<style>@import url(style.css);</style>
+
+<title>Pandas</title>
+<h1>Pandas</h1>
+
+<style>
+span:target {
+  background: yellow;
+}
+</style>
+
+<pre data-lang="python">
+# unpivot
+pandas.melt(
+  frame,
+  id_vars=None,
+  value_vars=None,
+  var_name=None,
+  value_name='value',
+  col_level=None,
+  ignore_index=True
+)
+
+
+<span id="a">a</span> = np.array([<span class="str">"foo"</span>, "foo", "foo", "foo", "bar", "bar",
+              "bar", "bar", "foo", "foo", "foo"], dtype=object)
+b = np.array(["one", "one", "one", "two", "one", "one",
+              "one", "two", "two", "two", "one"], dtype=object)
+c = np.array(["dull", "dull", "shiny", "dull", "dull", "shiny",
+              "shiny", "dull", "shiny", "shiny", "shiny"],
+             dtype=object)
+pd.crosstab(<a href="#a">a</a>, [b, c], rownames=['a'], colnames=['b', 'c'])
+
+	b   one        two
+	c   dull shiny dull shiny
+	a
+	bar    1     2    1     0
+	foo    2     2    1     2
+
+# Bin values into discrete intervals:
+>>> pd.cut(np.array([1, 7, 5, 4, 6, 3]), 3)
+... 
+[(0.994, 3.0], (5.0, 7.0], (3.0, 5.0], (3.0, 5.0], (5.0, 7.0], ...
+Categories (3, interval[float64, right]): [(0.994, 3.0] < (3.0, 5.0] ...
+
+
+# Cross-section
+df.xs('mammal')
+                   num_legs  num_wings
+animal locomotion
+cat    walks              4          0
+dog    walks              4          0
+bat    flies              2          2
+
+
+# to_markdown()
+s = pd.Series(["elk", "pig", "dog", "quetzal"], name="animal")
+print(s.to_markdown())
+|    | animal   |
+|---:|:---------|
+|  0 | elk      |
+|  1 | pig      |
+|  2 | dog      |
+|  3 | quetzal  |
+
+
+print(s.to_markdown(tablefmt="grid"))
++----+----------+
+|    | animal   |
++====+==========+
+|  0 | elk      |
++----+----------+
+|  1 | pig      |
++----+----------+
+|  2 | dog      |
++----+----------+
+|  3 | quetzal  |
++----+----------+
+</pre>
