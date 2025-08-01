@@ -1,0 +1,181 @@
+<meta charset="utf-8">
+<title> Monoid </title>
+<style>@import url(style.css);</style>
+
+<h1> About Monoids </h1>
+
+<p>
+In mathematics, we have this universal model that we mathematicians
+call Sets.  The study of Sets is known as Set Theory. It would seem
+that a Thing is a more universal quantity than a Set. But in
+mathematics we tend to construct operations that are applicable to
+the entire classes of Things rather than singular Things. So we
+group these things into Sets. For example, a mouse is a Thing:
+
+<p>
+<code>
+mouse: Thing
+</code>
+
+<p>
+But the abstract operation "catch a mouse" should be able to catch any mouse.
+Let's try to type this:
+
+<p>
+<code>
+catchAMouse: Thing &rarr; Caught&lt;Thing&gt;
+</code>
+
+<p>
+This may seem alright, but for a mathematician <code>catchAMouse</code>'s domain (the left
+side of &rarr;) is too
+wide because it may catch anything (<code>any: Thing</code>). Let's instead
+introduce a confusingly named set <code>Mouse</code> that contains all mice:
+
+<p>
+<code>
+  Mouse := { mouse<sub>first</sub>, mouse<sub>second</sub>, ..., mouse<sub>last</sub> }
+</code>
+
+<p>
+Now if we assume:
+
+<p>
+<code>
+  <span style="border: solid 1px black; padding: 0.5rem"> *: Mouse</span> iff <span style="border: solid 1px black; padding: 0.5rem">* &in; Mouse</span>
+</code>
+
+<p>
+then we can craft a better-looking mouse-catching operation:
+
+<p>
+<code>
+betterCatchAMouse: Mouse &rarr; Caught&lt;Mouse&gt;
+</code>
+
+<p>
+<code>
+  betterCatchAMouse(mouse<sub>first</sub>) = Caught(mouse<sub>first</sub>)
+  <br>
+  <br>
+  cat: Cat
+  <br>
+  betterCatchAMouse(cat) <span style="opacity: 0.5">-- does not compute, cat is not a Mouse</span>
+</code>
+
+<p>
+So <code>Thing</code> should naturally mean Set of all Things. You are a Thing
+if and only if you belong to the Set of all Things, which you must. You are a Mouse
+if and only if you belong to the Set of all Mice, which you may.
+Sets are kinda types, Things are kinda instances of types. Sets exist to
+promote generalization. It's convenient.
+
+<p>
+With sets, we can even conceptualize nothingness:
+
+<p>
+<code>
+  Thing<sup>+</sup> = { something, nothing }
+</code>
+
+<p>
+We know that nothing from nothing leaves nothing. You gotta have something
+if you wanna be with me. Let's formalize this intuition in an addition operation
+over <code>Thing<sup>+</sup></code>:
+
+<p>
+<code>
+  +: Thing<sup>+</sup> &times; Thing<sup>+</sup> &rarr; Thing<sup>+</sup>
+  <br>
+  nothing + nothing     := nothing
+  <br>
+  nothing + something   := something
+  <br>
+  something + nothing   := something
+  <br>
+  something + something := something
+</code>
+
+<p>
+Did we accidentally invent boolean OR? Likely. But we also accidentally invented
+a <strong>Monoid</strong>.
+
+<p>
+Any Set is a Monoid if it has a nothing in it:
+
+<p>
+<code>
+  monoid: Set = { something<sub>first</sub>, ... something<sub>last</sub>, nothing }
+</code>
+
+<p>
+You are truly nothing if combining you with an <code>x</code> yields
+an <code>x</code>. So a Set is truly a Monoid if it has a combining operation
+<code>(+)</code> such that:
+
+<p>
+<code>
+  nothing (+) nothing     := nothing
+  <br>
+  x (+) nothing   := x
+  <br>
+  nothing (+) y   := y
+  <br>
+  x (+) y := actuallyCombine(x, y)
+</code>
+
+<p>
+Now here's the surprising part. Why do you think Monoids are called Monoids?
+Because a Monoid is actually a Category with a single (mono) Object <code>(+)</code>;
+<code>x</code>s and <code>y</code>s in such a Category are considered Morphisms,
+so in category theoretic sense <code>actuallyCombine = ○</code> and nothing
+is an identity Morphism:
+
+<p>
+<code>
+  id (+) id     = id
+  <br>
+  id (+) f   = f
+  <br>
+  f (+) id   = f
+  <br>
+  id (+) g   := g
+  <br>
+  f (+) g := f ○ g
+</code>
+
+<p>
+So why am I even talking about this? Well, first of all, this was very
+unexpected for me. I learned this from the book <em>Category Theory for
+  Computer Science</em> I know I told you I was a mathematician, but I'm
+really a computer scientist in disguise, so I have to read this kind of books
+to under any maths.
+
+<p>
+The surprising part is thingink about Quantities as Morphisms rather than
+Objects and an Operator as an Object rather than a Morphism. Very
+counter-intuitve.
+
+<p>
+The other thing is that Monoids are quite fundamental. When you think of a
+nothing as a Morphism, it sounds more like <em>do nothing</em> than
+<em>be nothing</em>. Monoids are an abstraction for Processes, or maybe Processes
+are manifestations of Monoids. Many Actions of a Process are the Morphisms,
+and the singular (mono) Operation of a Process is Connection: a way to say that
+<em>this Action goes after this Action</em>. For parallel Actions we have
+Symmetric Monoids, a special kind of Monoid with a tensor product ⊗ operation for
+parallel composition. I'm not even making this up, this is what people actually
+do and they seem to like it.
+
+<p>
+Monoids is pretty high up in the hierarchy of common categories.
+It goes something like this: Group &larr; Monoid &larr; Semigroup &larr; Magma.
+Groups, unlike Monoids, have to have an inverse element, which is not that
+common in nature. I'd say a Group is a kind of balanced Monoid, where the Unit
+is the middle point, not the beginning (or ending, if you think that end is more
+correct than beginning). The nothingness, unlike the balanced center, is
+ubiquitous.
+
+<p>
+In conclusion, there's something pretty cool about Monoids and you must love
+them.
